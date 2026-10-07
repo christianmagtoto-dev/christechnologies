@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHRIS Technologies &amp; Solutions | One platform for your whole business</title>
+<meta name="description" content="CHRIS Technologies &amp; Solutions builds connected business systems that bring Sales, Production, Inventory, Finance, Workforce, and Operations together in one platform.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2220%22%20fill%3D%22%230E3B43%22/%3E%3Cg%20transform%3D%22translate%2810%2010%29%20scale%28.8%29%22%3E%3Cpath%20d%3D%22M55.33%209.08L82.77%2024.92M88.11%2034.16L88.11%2065.84M82.77%2075.08L55.33%2090.92M44.67%2090.92L17.23%2075.08M11.89%2065.84L11.89%2034.16M17.23%2024.92L44.67%209.08%22%20fill%3D%22none%22%20stroke%3D%22%23EAF2F0%22%20stroke-width%3D%227%22/%3E%3Cpath%20d%3D%22M65.32%2037.14A20%2020%200%201%200%2065.32%2062.86%22%20fill%3D%22none%22%20stroke%3D%22%23FF5B2E%22%20stroke-width%3D%229%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mist:#EAF2F0;   /* page background */
+  --ink:#0B1F24;    /* primary text */
+  --harbor:#0E3B43; /* hero + band background */
+  --lagoon:#2F7F86; /* support: lines, quiet detail */
+  --foam:#CFE3E0;   /* support: cards + soft bands */
+  --coral:#FF5B2E;  /* the one accent */
+  --s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:64px;--s6:96px;--s7:128px;
+  --gut:24px;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:'Instrument Sans',system-ui,sans-serif;font-weight:400;font-size:17px;line-height:1.6;color:var(--ink);background:var(--mist);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.logo{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-0.03em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
+section{position:relative;padding:var(--s6) 0}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--harbor);margin-bottom:var(--s2)}
+.on-dark .eyebrow,.hero .eyebrow{color:var(--foam)}
+h2{font-size:clamp(32px,6vw,56px);margin-bottom:var(--s3);max-width:16ch}
+p{max-width:62ch}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+header.solid{background:var(--harbor);border-bottom-color:rgba(207,227,224,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;color:var(--mist)}
+.logo{font-size:20px;text-decoration:none;letter-spacing:-0.02em;display:flex;align-items:center;gap:var(--s1)}
+.links{display:none;align-items:center;gap:var(--s4)}
+.links a{font-weight:500;font-size:15px;text-decoration:none;background:linear-gradient(var(--coral),var(--coral)) left bottom/0 2px no-repeat;padding-bottom:4px;transition:background-size .3s ease}
+.links a:hover{background-size:100% 2px}
+.btn{display:inline-block;background:var(--coral);color:var(--ink);font-weight:500;text-decoration:none;padding:var(--s2) var(--s3);border-radius:999px;transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,91,46,.35)}
+.links .btn{padding:var(--s1) var(--s3);background-image:none;font-size:15px}
+.burger{background:none;border:0;color:var(--mist);width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:currentColor;margin:6px auto;transition:transform .3s ease,opacity .3s ease}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.menu{display:none;background:var(--harbor);padding:var(--s2) var(--gut) var(--s3);flex-direction:column;gap:var(--s2);color:var(--mist)}
+.menu.open{display:flex}
+.menu a{font-size:20px;text-decoration:none;font-weight:500;padding:var(--s1) 0}
+.menu .btn{text-align:center;color:var(--ink)}
+
+/* hero */
+.hero{min-height:max(600px,85vh);display:flex;align-items:center;padding:calc(64px + var(--s5)) 0 var(--s5);color:var(--mist);overflow:hidden;
+  background:linear-gradient(120deg,#0E3B43,#14565e,#0E3B43,#0b2f36,#0E3B43);background-size:300% 300%;animation:drift 24s ease-in-out infinite}
+@keyframes drift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .wrap{position:relative;z-index:2;display:grid;gap:var(--s5);align-items:center;width:100%}
+.status{display:inline-flex;align-items:center;gap:var(--s1);font-size:14px;color:var(--foam);margin-bottom:var(--s3)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--coral);animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,91,46,.55)}50%{box-shadow:0 0 0 8px rgba(255,91,46,0)}}
+h1{font-size:clamp(40px,8.5vw,88px);margin-bottom:var(--s3)}
+.hero p.sub{font-size:19px;color:var(--foam);margin-bottom:var(--s4)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3)}
+.hero .btn{font-size:18px;padding:var(--s2) var(--s4)}
+.sec-link{font-weight:500;text-decoration:none;background:linear-gradient(var(--coral),var(--coral)) left bottom/0 2px no-repeat;padding-bottom:4px;transition:background-size .3s ease}
+.sec-link:hover{background-size:100% 2px}
+.fl{position:absolute;border-radius:50%;border:1px solid rgba(207,227,224,.25);z-index:1;animation:float 32s ease-in-out infinite}
+.fl.a{width:240px;height:240px;right:-80px;top:15%}
+.fl.b{width:88px;height:88px;left:8%;bottom:10%;animation-duration:40s;animation-direction:reverse;background:rgba(47,127,134,.25);border:0}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-24px,32px)}}
+
+/* signature: module map */
+.map{width:100%;max-width:520px;justify-self:center;overflow:visible}
+.map .edge{stroke:var(--lagoon);stroke-width:1.5;fill:none}
+.map .spoke{stroke:rgba(207,227,224,.18);stroke-width:1;fill:none;stroke-dasharray:3 5}
+.map .node{fill:var(--harbor);stroke:var(--foam);stroke-width:2}
+.map .ring{fill:none;stroke:var(--coral);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:ping 18s ease-out infinite;animation-delay:calc(var(--i)*2.25s)}
+@keyframes ping{0%{opacity:0;transform:scale(1)}3%{opacity:.95}14%{opacity:0;transform:scale(2.6)}100%{opacity:0}}
+.map text{fill:var(--mist);font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;text-anchor:middle}
+.map .hub{fill:var(--coral)}
+.map .hubt{fill:var(--foam);font-size:11px}
+.signal{fill:var(--coral)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 600ms var(--ease),transform 600ms var(--ease);transition-delay:var(--d,0ms)}
+.rv.in{opacity:1;transform:none}
+
+/* about */
+.about-grid{display:grid;gap:var(--s4)}
+.about-grid p+p{margin-top:var(--s2)}
+.panel{min-height:240px;border-radius:24px;background:linear-gradient(135deg,var(--harbor),var(--lagoon),var(--harbor));background-size:300% 300%;animation:drift 28s ease-in-out infinite;position:relative;overflow:hidden}
+.panel::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid rgba(207,227,224,.35);right:var(--s3);bottom:var(--s3)}
+
+/* modules */
+.band{background:var(--foam)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s1);list-style:none;margin-top:var(--s4)}
+.chips li{background:var(--mist);border-radius:999px;padding:var(--s1) var(--s2);font-weight:500;font-size:16px}
+.chips.alt li{background:var(--foam)}
+.flow li::after{content:"\2192";margin-left:var(--s1);color:var(--lagoon)}
+.flow li:last-child::after{content:none}
+.sub-h{font-size:28px;margin-top:var(--s5)}
+.devs{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3);margin:var(--s4) 0}
+.devs b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;letter-spacing:-0.03em;color:var(--harbor)}
+.roles h3{font-size:22px}
+@media(min-width:1024px){.devs{grid-template-columns:repeat(4,1fr)}.roles{grid-template-columns:repeat(4,1fr)}}
+.grid{display:grid;gap:var(--s3);margin-top:var(--s5)}
+.card{background:var(--mist);border-radius:20px;padding:var(--s4) var(--s3);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(14,59,67,.14)}
+.card h3{font-size:26px;margin-bottom:var(--s1)}
+.card p{font-size:16px}
+.card .tag{display:inline-block;width:32px;height:4px;border-radius:2px;background:var(--coral);margin-bottom:var(--s3)}
+
+/* offer */
+.offer{display:grid;gap:var(--s3);margin-top:var(--s5)}
+.offer div{border-left:4px solid var(--lagoon);padding:var(--s1) 0 var(--s1) var(--s3);transition:border-color .25s ease}
+.offer div:hover{border-color:var(--coral)}
+.offer h3{font-size:24px;margin-bottom:var(--s1)}
+
+/* why */
+.why{background:var(--harbor);color:var(--mist);overflow:hidden}
+.why h2{max-width:20ch}
+.stats{display:flex;gap:var(--s5);margin:var(--s4) 0 var(--s5);flex-wrap:wrap}
+.stat b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,14vw,128px);line-height:1;letter-spacing:-0.04em;color:var(--coral)}
+.stat span{color:var(--foam);font-size:16px}
+.points{display:grid;gap:var(--s4)}
+.points h3{font-size:24px;margin-bottom:var(--s1)}
+.points p{color:var(--foam)}
+
+/* contact */
+.contact{background:var(--foam);text-align:left}
+.contact h2{max-width:18ch}
+.contact .btn{font-size:18px;padding:var(--s2) var(--s4);margin-top:var(--s3)}
+footer{background:var(--harbor);color:var(--foam);padding:var(--s5) 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2)}
+footer .logo{color:var(--mist)}
+
+@media(min-width:640px){
+  body{font-size:18px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .points{grid-template-columns:repeat(3,1fr)}
+  .offer{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1024px){
+  :root{--gut:64px}
+  section{padding:var(--s7) 0}
+  .hero{min-height:100vh}
+  .hero .wrap{grid-template-columns:1.15fr .85fr}
+  .links{display:flex}
+  .burger,.menu{display:none!important}
+  .about-grid{grid-template-columns:1fr 1fr;gap:var(--s6);align-items:center}
+  .panel{min-height:380px}
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1440px){
+  .hero p.sub{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="CHRIS Technologies &amp; Solutions, home"><svg width="36" height="36" viewBox="0 0 100 100" aria-hidden="true"><path d="M55.33 9.08L82.77 24.92M88.11 34.16L88.11 65.84M82.77 75.08L55.33 90.92M44.67 90.92L17.23 75.08M11.89 65.84L11.89 34.16M17.23 24.92L44.67 9.08" fill="none" stroke="#EAF2F0" stroke-width="7"/><path d="M65.32 37.14A20 20 0 1 0 65.32 62.86" fill="none" stroke="#FF5B2E" stroke-width="9"/></svg><span>CHRIS</span></a>
+    <nav class="links" aria-label="Main"><a href="#modules">Modules</a><a href="#flow">How it connects</a><a href="#fit">Built for you</a><a href="#grow">Growth</a><a class="btn" href="#contact">Talk to our team</a></nav>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="menu" id="menu" aria-label="Mobile"><a href="#modules">Modules</a><a href="#flow">How it connects</a><a href="#fit">Built for you</a><a href="#grow">Growth</a><a class="btn" href="#contact">Talk to our team</a></nav>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1"><div class="fl a" aria-hidden="true"></div><div class="fl b" aria-hidden="true"></div>
+<div class="wrap"><div>
+<div class="status"><span class="dot" aria-hidden="true"></span>Open to new conversations</div>
+<h1 id="h1">Your whole business. One app. Anywhere in the world.</h1>
+<p class="sub">Run your business from one connected platform. CHRIS Technologies &amp; Solutions builds modern business systems that bring your people, processes, and data together, so your organization can work smarter, faster, and with greater visibility.</p>
+<div class="cta-row"><a class="btn" href="#contact">Talk to our team</a><a class="sec-link" href="#modules">Explore our solutions</a></div>
+</div><svg class="map" viewBox="-60 14 520 376" role="img" aria-label="Eight modules, Sales, Production, Inventory, Purchasing, Finance, Workforce, Operations and Management, connected around one platform"><path class="spoke" d="M200,60L200,200M299,101L200,200M340,200L200,200M299,299L200,200M200,340L200,200M101,299L200,200M60,200L200,200M101,101L200,200"/><path class="edge" d="M200,60L299,101L340,200L299,299L200,340L101,299L60,200L101,101Z"/><circle class="ring" style="--i:0" cx="200" cy="60" r="9"/><circle class="node" cx="200" cy="60" r="9"/><text x="200" y="40" style="text-anchor:middle">Sales</text><circle class="ring" style="--i:1" cx="299" cy="101" r="9"/><circle class="node" cx="299" cy="101" r="9"/><text x="315" y="106" style="text-anchor:start">Production</text><circle class="ring" style="--i:2" cx="340" cy="200" r="9"/><circle class="node" cx="340" cy="200" r="9"/><text x="356" y="205" style="text-anchor:start">Inventory</text><circle class="ring" style="--i:3" cx="299" cy="299" r="9"/><circle class="node" cx="299" cy="299" r="9"/><text x="315" y="304" style="text-anchor:start">Purchasing</text><circle class="ring" style="--i:4" cx="200" cy="340" r="9"/><circle class="node" cx="200" cy="340" r="9"/><text x="200" y="370" style="text-anchor:middle">Finance</text><circle class="ring" style="--i:5" cx="101" cy="299" r="9"/><circle class="node" cx="101" cy="299" r="9"/><text x="85" y="304" style="text-anchor:end">Workforce</text><circle class="ring" style="--i:6" cx="60" cy="200" r="9"/><circle class="node" cx="60" cy="200" r="9"/><text x="44" y="205" style="text-anchor:end">Operations</text><circle class="ring" style="--i:7" cx="101" cy="101" r="9"/><circle class="node" cx="101" cy="101" r="9"/><text x="85" y="106" style="text-anchor:end">Management</text><circle class="hub" cx="200" cy="200" r="30"/><text class="hubt" x="200" y="204" style="fill:#0B1F24;font-weight:500">One system</text><circle class="signal" r="5"><animateMotion dur="18s" repeatCount="indefinite" path="M200,60L299,101L340,200L299,299L200,340L101,299L60,200L101,101Z"/></circle></svg></div></section>
+<section id="modules" aria-labelledby="mod-h"><div class="wrap"><div class="rv"><div class="eyebrow">One platform</div><h2 id="mod-h">Your entire business, in one place.</h2>
+<p>Your business shouldn't depend on disconnected spreadsheets, separate systems, and endless messages between departments. CHRIS brings your operations together in one centralized platform, giving every team the tools they need and management a complete view of the business.</p></div>
+<div class="grid"><article class="card rv" style="--d:0ms"><div class="tag"></div><h3>Sales</h3><p>Manage customers, quotations, orders, payments, and sales activity from one place.</p></article><article class="card rv" style="--d:80ms"><div class="tag"></div><h3>Production</h3><p>Create and manage work orders, track progress, assign tasks, and monitor completion.</p></article><article class="card rv" style="--d:160ms"><div class="tag"></div><h3>Inventory</h3><p>Know what you have, what you need, and where your materials are at every stage.</p></article><article class="card rv" style="--d:0ms"><div class="tag"></div><h3>Purchasing</h3><p>Manage suppliers, purchase requests, purchase orders, and procurement workflows.</p></article><article class="card rv" style="--d:80ms"><div class="tag"></div><h3>Finance</h3><p>Track revenue, expenses, receivables, payments, and financial activity.</p></article><article class="card rv" style="--d:160ms"><div class="tag"></div><h3>Workforce</h3><p>Give teams the tools to manage tasks, responsibilities, schedules, and performance.</p></article><article class="card rv" style="--d:0ms"><div class="tag"></div><h3>Operations</h3><p>Connect daily workflows across departments and reduce repetitive manual processes.</p></article><article class="card rv" style="--d:80ms"><div class="tag"></div><h3>Management</h3><p>Real-time visibility for owners and executives through dashboards, reports, and KPIs.</p></article></div></div></section>
+<section id="flow" class="band" aria-labelledby="flow-h"><div class="wrap"><div class="rv"><div class="eyebrow">How it connects</div><h2 id="flow-h">From one department to the entire business.</h2>
+<p>A customer order can affect Sales, Production, Inventory, Purchasing, Finance, and Delivery. CHRIS connects those processes, so when one department updates the system, the information flows to the teams that need it.</p></div>
+<ol class="chips flow rv"><li>Customer order</li><li>Sales</li><li>Production</li><li>Inventory</li><li>Purchasing (if materials are needed)</li><li>Production</li><li>Quality control</li><li>Delivery</li><li>Finance</li><li>Management</li></ol>
+<p class="rv" style="margin-top:var(--s3);font-weight:500">Less duplication. Less manual coordination. Better visibility.</p>
+<h3 class="sub-h rv">Automate the work behind your business</h3>
+<ul class="chips rv"><li>Order received: work order created</li><li>Materials required: purchasing notified</li><li>Production completed: inventory updated</li><li>Payment recorded: finance updated</li><li>Key activity: management dashboard updated</li></ul></div></section>
+<section id="fit" aria-labelledby="fit-h"><div class="wrap"><div class="rv"><div class="eyebrow">Built for you</div><h2 id="fit-h">Built around the way your business works.</h2>
+<p>CHRIS isn't designed around forcing your company into a rigid workflow. We build business systems around your actual processes, structure, and requirements.</p></div>
+<ul class="chips alt rv"><li>Manufacturing business</li><li>Furniture company</li><li>Retail operation</li><li>Construction company</li><li>Distribution business</li><li>Service company</li><li>Warehouse</li><li>Growing small or medium enterprise</li></ul>
+<h3 class="sub-h rv">The right information for the right person</h3>
+<p class="rv">Role-based access and department-specific interfaces show each employee the tools and information relevant to their responsibilities.</p>
+<div class="offer roles"><div class="rv" style="--d:0ms"><h3>CEO / Owner</h3><p>A complete view of the business.</p></div><div class="rv" style="--d:80ms"><h3>Management</h3><p>Performance, operations, approvals, reports, and KPIs.</p></div><div class="rv" style="--d:160ms"><h3>Sales</h3><p>Customers, quotations, orders, and sales activity.</p></div><div class="rv" style="--d:0ms"><h3>Production</h3><p>Work orders, schedules, assignments, and production status.</p></div><div class="rv" style="--d:80ms"><h3>Inventory</h3><p>Stock levels, material movements, and purchasing requirements.</p></div><div class="rv" style="--d:160ms"><h3>Finance</h3><p>Payments, expenses, revenue, receivables, and financial records.</p></div><div class="rv" style="--d:0ms"><h3>Employees</h3><p>Their assigned tasks, responsibilities, and relevant information.</p></div></div></div></section>
+<section id="anywhere" class="band" aria-labelledby="any-h"><div class="wrap"><div class="rv"><div class="eyebrow">Access</div><h2 id="any-h">Access your business from anywhere.</h2>
+<p>With cloud-based business systems, authorized users can access the information they need from wherever they work: the office, home, on the road, or across multiple locations.</p></div>
+<div class="devs rv"><div><b>CEO</b>Phone</div><div><b>Manager</b>Laptop</div><div><b>Sales</b>Tablet</div><div><b>Production</b>Workstation</div></div>
+<p class="rv">Monitor revenue, expenses, sales, production, inventory, purchasing, payments, workforce activity, and KPIs. Instead of asking what's happening in the business, open your dashboard and see it.</p></div></section>
+<section id="grow" aria-labelledby="grow-h"><div class="wrap"><div class="rv"><div class="eyebrow">Growth</div><h2 id="grow-h">Built to grow with your business.</h2>
+<p>Start with the systems your business needs today and expand as your organization grows. One technology ecosystem, built around your business.</p></div><div class="offer roles"><div class="rv" style="--d:0ms"><h3>ERP</h3><p>Enterprise Resource Planning</p></div><div class="rv" style="--d:80ms"><h3>CRM</h3><p>Customer Relationship Management</p></div><div class="rv" style="--d:160ms"><h3>HR</h3><p>Human Resources and Workforce Management</p></div><div class="rv" style="--d:0ms"><h3>Inventory</h3><p>Stock and Supply Management</p></div><div class="rv" style="--d:80ms"><h3>Analytics</h3><p>Business Intelligence and Reporting</p></div><div class="rv" style="--d:160ms"><h3>Automation</h3><p>Connected Workflows and Processes</p></div><div class="rv" style="--d:0ms"><h3>AI</h3><p>Intelligent Business Assistance and Automation</p></div></div></div></section>
+<section id="why" class="why" aria-labelledby="why-h"><div class="wrap"><div class="rv"><div class="eyebrow" style="color:var(--foam)">More than software</div><h2 id="why-h">Better systems, not more complicated software.</h2></div>
+<div class="stats"><div class="stat rv"><b data-count="8">0</b><span>modules</span></div><div class="stat rv" style="--d:120ms"><b data-count="1">0</b><span>platform</span></div></div>
+<div class="points"><div class="rv"><h3>Connect</h3><p>Bring your people, departments, and data together.</p></div><div class="rv" style="--d:100ms"><h3>Simplify</h3><p>Reduce unnecessary manual work and disconnected processes.</p></div><div class="rv" style="--d:200ms"><h3>Grow</h3><p>Give your business the systems and visibility it needs to scale.</p></div></div></div></section>
+<section id="contact" class="contact" aria-labelledby="c-h"><div class="wrap rv"><div class="eyebrow">Work with us</div><h2 id="c-h">Ready to connect your business?</h2>
+<p>Whether you're looking to replace spreadsheets, connect departments, automate repetitive work, or build a complete business management platform, we can help turn your business processes into a connected digital system.</p>
+<!-- To go live, change this href to your email (mailto:you@example.com) or booking link. -->
+<a class="btn" href="#contact">Talk to our team</a><p style="margin-top:var(--s3);font-weight:500">Let's build a system around the way your business works.</p></div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">CHRIS Technologies &amp; Solutions</span>
+    <a class="sec-link" href="https://www.facebook.com/christechsystems/" target="_blank" rel="noopener">Facebook</a>
+    <span>&copy; <span id="yr">2026</span> CHRIS Technologies &amp; Solutions</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('top'),b=document.querySelector('.burger'),m=document.getElementById('menu');
+  function onScroll(){hdr.classList.toggle('solid',window.scrollY>80||m.classList.contains('open'))}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  b.addEventListener('click',function(){
+    var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);onScroll();
+  });
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');onScroll()})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function count(el){
+    var t=+el.dataset.count;
+    if(reduce){el.textContent=t;return}
+    var s=null,d=1400;
+    function step(ts){
+      if(!s)s=ts;var p=Math.min((ts-s)/d,1),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(t*e);
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(count);
+      io.unobserve(e.target);
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
